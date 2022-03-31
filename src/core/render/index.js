@@ -288,7 +288,9 @@ function _renderNeedle({ config, svg, r, centerTx }) {
     .style('fill', config.needleColor)
 
   return pg
-    .append('path')
-    .attr('d', pointerLine)
-    .attr('transform', `rotate(${config.minAngle})`)
+    .append('rect')
+    .attr('rx', 25)
+      .attr('width', needleLength )
+      .attr('height', 25)
+      .attr('transform', `rotate(${config.minAngle})`)
 }
